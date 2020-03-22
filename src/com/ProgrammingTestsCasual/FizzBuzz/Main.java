@@ -38,11 +38,19 @@ public class Main {
     public static void main(String[] args) {
         // write your code here
 
+        System.out.println("FizzBuzz without threading:\n\n");
         for (int i = 0; i < TIMES_SHOULD_RUN; i++) {
+            FizzBuzzOriginal();
+        }
 
+        System.out.println("FizzBuzz with threading:\n\n");
+        for (int i = 0; i < TIMES_SHOULD_RUN; i++) {
             MyThread myThread = new MyThread();
             myThread.run();
+        }
 
+        System.out.println("FizzBuzz with synchronised threading:\n\n");
+        for (int i = 0; i < TIMES_SHOULD_RUN; i++) {
             MySynchronisedThread mySynchronisedThread = new MySynchronisedThread();
             mySynchronisedThread.run();
         }
